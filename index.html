@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>taskboard.gg</title>
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="task.js"></script>
+    <script src="task_manager.js"></script>
+    <script src="main.js"></script>
+    <style>
+      h1 {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+      }
+      .container {
+        max-width: 960px;
+        margin: 0 auto;
+      }
+      .mt-10 {
+        margin-top: 10px;
+      }
+    </style>
+    <script>
+      $(function () {
+        $("#tabs").tabs({
+          heightStyle: "fill",
+          collapsible: true,
+        });
+
+        // Sortable functionality
+        $(".sortable").sortable();
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>taskboard.gg</h1>
+
+      <div id="tabs">
+        <ul>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#collect">Collect</a></li>
+          <li><a href="#organize">Organize</a></li>
+          <li><a href="#plan">Plan</a></li>
+          <li><a href="#do">Do</a></li>
+        </ul>
+        <div id="process" class="category">
+          <ul id="process-tasks" class="task-list sortable"></ul>
+        </div>
+        <div id="collect" class="category">
+          <ul id="collect-tasks" class="task-list sortable"></ul>
+        </div>
+        <div id="organize" class="category">
+          <ul id="organize-tasks" class="task-list sortable"></ul>
+        </div>
+        <div id="plan" class="category">
+          <ul id="plan-tasks" class="task-list sortable"></ul>
+        </div>
+        <div id="do" class="category">
+          <ul id="do-tasks" class="task-list sortable"></ul>
+        </div>
+      </div>
+
+      <div id="add-task-dialog" title="Add Task">
+        <form>
+          <label for="task-name">Name:</label>
+          <input type="text" id="task-name" name="task-name" required /><br />
+          <label for="task-category">Category:</label>
+          <select id="task-category" name="task-category" required>
+            <option value="process">Process</option>
+            <option value="collect">Collect</option>
+            <option value="organize">Organize</option>
+            <option value="plan">Plan</option>
+            <option value="do">Do</option></select
+          ><br />
+          <label for="task-tags">Tags:</label>
+          <input type="text" id="task-tags" name="task-tags" /><br />
+          <label for="task-priority">Priority:</label>
+          <select id="task-priority" name="task-priority">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option></select
+          ><br />
+          <label for="task-due-date">Due Date:</label>
+          <input type="date" id="task-due-date" name="task-due-date" /><br />
+        </form>
+      </div>
+      <button
+        class="ui-button ui-widget ui-corner-all mt-10"
+        id="add-task-button"
+      >
+        Add Task
+      </button>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,175 @@
+Core classes, functions, and methods:
+- Task: represents a single task with a name, category, tags, priority, and due date.
+- TaskManager: manages the tasks, including adding, removing, and moving tasks between categories.
+
+Entry point file:
+FILENAME: index.html
+```html
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Task Management Tool</title>
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+	<script src="task.js"></script>
+	<script src="task_manager.js"></script>
+	<script src="main.js"></script>
+</head>
+<body>
+	<h1>Task Management Tool</h1>
+	<div id="process" class="category">
+		<h2>Process</h2>
+		<ul id="process-tasks" class="task-list"></ul>
+	</div>
+	<div id="collect" class="category">
+		<h2>Collect</h2>
+		<ul id="collect-tasks" class="task-list"></ul>
+	</div>
+	<div id="organize" class="category">
+		<h2>Organize</h2>
+		<ul id="organize-tasks" class="task-list"></ul>
+	</div>
+	<div id="plan" class="category">
+		<h2>Plan</h2>
+		<ul id="plan-tasks" class="task-list"></ul>
+	</div>
+	<div id="do" class="category">
+		<h2>Do</h2>
+		<ul id="do-tasks" class="task-list"></ul>
+	</div>
+	<div id="add-task-dialog" title="Add Task">
+		<form>
+			<label for="task-name">Name:</label>
+			<input type="text" id="task-name" name="task-name" required><br>
+			<label for="task-category">Category:</label>
+			<select id="task-category" name="task-category" required>
+				<option value="process">Process</option>
+				<option value="collect">Collect</option>
+				<option value="organize">Organize</option>
+				<option value="plan">Plan</option>
+				<option value="do">Do</option>
+			</select><br>
+			<label for="task-tags">Tags:</label>
+			<input type="text" id="task-tags" name="task-tags"><br>
+			<label for="task-priority">Priority:</label>
+			<select id="task-priority" name="task-priority">
+				<option value="low">Low</option>
+				<option value="medium">Medium</option>
+				<option value="high">High</option>
+			</select><br>
+			<label for="task-due-date">Due Date:</label>
+			<input type="date" id="task-due-date" name="task-due-date"><br>
+		</form>
+	</div>
+	<button id="add-task-button">Add Task</button>
+</body>
+</html>
+```
+
+FILENAME: task.js
+```js
+class Task {
+	constructor(name, category, tags, priority, dueDate) {
+		this.name = name;
+		this.category = category;
+		this.tags = tags;
+		this.priority = priority;
+		this.dueDate = dueDate;
+	}
+}
+```
+
+FILENAME: task_manager.js
+```js
+class TaskManager {
+	constructor() {
+		this.tasks = [];
+	}
+
+	addTask(task) {
+		this.tasks.push(task);
+	}
+
+	removeTask(task) {
+		const index = this.tasks.indexOf(task);
+		if (index !== -1) {
+			this.tasks.splice(index, 1);
+		}
+	}
+
+	moveTask(task, category) {
+		task.category = category;
+	}
+
+	getTasksByCategory(category) {
+		return this.tasks.filter(task => task.category === category);
+	}
+
+	getTasksByTag(tag) {
+		return this.tasks.filter(task => task.tags.includes(tag));
+	}
+
+	getTasksByPriority(priority) {
+		return this.tasks.filter(task => task.priority === priority);
+	}
+
+	getTasksByDueDate(dueDate) {
+		return this.tasks.filter(task => task.dueDate === dueDate);
+	}
+}
+```
+
+FILENAME: main.js
+```js
+$(document).ready(function() {
+	const taskManager = new TaskManager();
+
+	// Add task dialog
+	$("#add-task-dialog").dialog({
+		autoOpen: false,
+		modal: true,
+		buttons: {
+			"Add Task": function() {
+				const name = $("#task-name").val();
+				const category = $("#task-category").val();
+				const tags = $("#task-tags").val().split(",");
+				const priority = $("#task-priority").val();
+				const dueDate = $("#task-due-date").val();
+				const task = new Task(name, category, tags, priority, dueDate);
+				taskManager.addTask(task);
+				addTaskToList(task);
+				$(this).dialog("close");
+			},
+			Cancel: function() {
+				$(this).dialog("close");
+			}
+		}
+	});
+
+	// Add task button
+	$("#add-task-button").click(function() {
+		$("#add-task-dialog").dialog("open");
+	});
+
+	// Add existing tasks to lists
+	taskManager.tasks.forEach(task => addTaskToList(task));
+
+	// Make task lists sortable
+	$(".task-list").sortable({
+		connectWith: ".task-list",
+		stop: function(event, ui) {
+			const task = ui.item.data("task");
+			const category = ui.item.parent().attr("id");
+			taskManager.moveTask(task, category);
+		}
+	});
+
+	function addTaskToList(task) {
+		const $taskItem = $("<li>").text(task.name).data("task", task);
+		$(`#${task.category}-tasks`).append($taskItem);
+	}
+});
+```
+
+The code above creates a task management tool in the browser using jQuery and jQuery UI for the UI. It allows users to create tasks with a name, category, tags, priority, and due date, and move tasks between categories. The data is stored in the browser and no back-end is needed.
