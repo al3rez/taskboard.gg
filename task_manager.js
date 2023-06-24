@@ -4,12 +4,13 @@ class TaskManager {
   }
 
   addTask(task) {
+    task.id = this.generateTaskId(); // Generate unique task ID
     this.tasks.push(task);
     this.saveTasksToStorage();
   }
 
   removeTask(task) {
-    const index = this.tasks.indexOf(task);
+    const index = this.tasks.findIndex((t) => t.id === task.id);
     if (index !== -1) {
       this.tasks.splice(index, 1);
       this.saveTasksToStorage();
@@ -17,8 +18,11 @@ class TaskManager {
   }
 
   moveTask(task, category) {
-    task.category = category;
-    this.saveTasksToStorage();
+    const index = this.tasks.findIndex((t) => t.id === task.id);
+    if (index !== -1) {
+      this.tasks[index].category = category;
+      this.saveTasksToStorage();
+    }
   }
 
   getTasksByCategory(category) {
@@ -44,5 +48,9 @@ class TaskManager {
   fetchTasksFromStorage() {
     const tasks = localStorage.getItem("tasks");
     return tasks ? JSON.parse(tasks) : null;
+  }
+
+  generateTaskId() {
+    return "task-" + Date.now();
   }
 }

@@ -60,17 +60,17 @@ $(function () {
     var taskListItem = $("<li>")
       .text(task.name + " (due: ")
       .append(
-        $("<span>").text(dueDateText.toLowerCase()).css("color", dueDateColor)
+        $("<span>")
+          .text(dueDateText)
+          .css("color", dueDateColor)
       )
       .append(")")
-      .attr("data-category", task.category)
-      .attr("data-tags", task.tags.join(","))
-      .attr("data-priority", task.priority)
-      .attr("data-due-date", task.dueDate)
+      .attr("data-task-id", task.id) // Set unique task ID as data attribute
       .appendTo("#" + task.category + "-tasks");
 
     return taskListItem;
   }
+
 
   // Helper function to get the due date color based on the time remaining
   function getDueDateColor(dueDate) {
