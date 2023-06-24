@@ -92,12 +92,13 @@ $(function () {
       $("#add-task-dialog").dialog("open");
     }
   });
+
   // Helper function to update a task list item with new task details
   function updateTaskListItem(task) {
     var taskListItem = $("li[data-task-id='" + task.id + "']");
     if (taskListItem.length) {
       var dueDateColor = getDueDateColor(task.dueDate);
-      var dueDateText = getDueDateText(task.dueDate);
+      var dueDateText = getDueDateText(task.dueDate).toLowerCase();
 
       taskListItem
         .text(task.name + " (due: ")
@@ -107,6 +108,8 @@ $(function () {
             .css("color", dueDateColor)
         )
         .append(")");
+
+      location.reload();
     }
   }
 
@@ -120,13 +123,13 @@ $(function () {
   // Helper function to create a task list item with due date color
   function createTaskListItem(task) {
     var dueDateColor = getDueDateColor(task.dueDate);
-    var dueDateText = getDueDateText(task.dueDate);
+    var dueDateText = getDueDateText(task.dueDate).toLowerCase();
 
     var taskListItem = $("<li>")
       .text(task.name + " (due: ")
       .append(
         $("<span>")
-          .text(dueDateText.toLowerCase())
+          .text(dueDateText)
           .css("color", dueDateColor)
       )
       .append(")")
