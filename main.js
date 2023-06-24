@@ -9,6 +9,8 @@ $(function () {
 
   // Add Task button click event
   $("#add-task-button").on("click", function () {
+    clearAddTaskForm();
+    $("#add-task-dialog").dialog("option", "title", "Add Task");
     $("#add-task-dialog").dialog("open");
   });
 
@@ -45,6 +47,69 @@ $(function () {
     },
   });
 
+  // Handle list item click event
+  $(document).on("click", ".sortable li", function () {
+    var taskId = $(this).attr("data-task-id");
+    var task = taskManager.tasks.find(function (t) {
+      return t.id === taskId;
+    });
+
+    if (task) {
+      // Prefill the dialog with task details
+      $("#task-name").val(task.name);
+      $("#task-category").val(task.category);
+      $("#task-tags").val(task.tags.join(","));
+      $("#task-priority").val(task.priority);
+      $("#task-due-date").val(task.dueDate);
+
+      // Update dialog title and buttons
+      $("#add-task-dialog").dialog("option", "title", "Edit Task");
+      $("#add-task-dialog").dialog("option", "buttons", {
+        Save: function () {
+          // Update task properties
+          task.name = $("#task-name").val();
+          task.category = $("#task-category").val();
+          task.tags = $("#task-tags").val().split(",");
+          task.priority = $("#task-priority").val();
+          task.dueDate = $("#task-due-date").val();
+
+          // Update task details in the UI
+          updateTaskListItem(task);
+
+          // Save updated tasks to storage
+          taskManager.saveTasksToStorage();
+
+          $(this).dialog("close");
+          clearAddTaskForm();
+        },
+        Cancel: function () {
+          $(this).dialog("close");
+          clearAddTaskForm();
+        },
+      });
+
+      // Open the dialog
+      $("#add-task-dialog").dialog("open");
+    }
+  });
+  // Helper function to update a task list item with new task details
+  function updateTaskListItem(task) {
+    var taskListItem = $("li[data-task-id='" + task.id + "']");
+    if (taskListItem.length) {
+      var dueDateColor = getDueDateColor(task.dueDate);
+      var dueDateText = getDueDateText(task.dueDate);
+
+      taskListItem
+        .text(task.name + " (due: ")
+        .append(
+          $("<span>")
+            .text(dueDateText)
+            .css("color", dueDateColor)
+        )
+        .append(")");
+    }
+  }
+
   // Helper function to add a task to the appropriate task list
   function addTaskToList(task) {
     var taskListId = "#" + task.category + "-tasks";
@@ -61,7 +126,7 @@ $(function () {
       .text(task.name + " (due: ")
       .append(
         $("<span>")
-          .text(dueDateText)
+          .text(dueDateText.toLowerCase())
           .css("color", dueDateColor)
       )
       .append(")")
@@ -103,7 +168,7 @@ $(function () {
       return "Overdue";
     } else if (timeRemaining < oneDay) {
       return "Today";
-    } else if (timeRemaining < 2 * oneDay) {
+    } else if (timeRemaining < 1 * oneDay) {
       return "Tomorrow";
     } else if (timeRemaining < 7 * oneDay) {
       return "in " + daysRemaining + " days";
