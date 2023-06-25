@@ -1,1 +1,224 @@
-function _0x7096(_0xafc1e9,_0x48d70f){var _0x33cacd=_0x33ca();return _0x7096=function(_0x7096e6,_0x4bc56c){_0x7096e6=_0x7096e6-0x1ee;var _0x25c8a7=_0x33cacd[_0x7096e6];return _0x25c8a7;},_0x7096(_0xafc1e9,_0x48d70f);}function _0x33ca(){var _0x28e4f4=['Overdue','1126892wvIhKZ','<span>','491368dGVAeh','6223704JSjmcS','show','in\x20','reload','text','387SAxFtX','#add-task-dialog','#task-priority','-tasks','append','split','category','preventDefault','find','getTime','\x20(due:\x20','6738QWYTRJ','ceil','close','dialog','#task-name','toLowerCase','true','orange','appendTo','<li>','process','open','Edit\x20Task','priority','#task-tags','val','tasks','#task-category','forEach','setItem','color','#task-due-date','join','length','getItem','option','css','tags','1096384fykxbK','Add\x20Task','name','.sortable\x20li','click','261315YZVFqN','dueDate','#add-task-button','inherit','title','8031604tFkdJv','#popup-content','in\x20more\x20than\x20a\x20week','keydown','red','482oremnD'];_0x33ca=function(){return _0x28e4f4;};return _0x33ca();}(function(_0x5c2370,_0x2441e4){var _0x241ae8=_0x7096,_0x511b04=_0x5c2370();while(!![]){try{var _0x2449b5=parseInt(_0x241ae8(0x22a))/0x1+-parseInt(_0x241ae8(0x228))/0x2*(parseInt(_0x241ae8(0x1fd))/0x3)+-parseInt(_0x241ae8(0x219))/0x4+-parseInt(_0x241ae8(0x21e))/0x5+-parseInt(_0x241ae8(0x22d))/0x6+-parseInt(_0x241ae8(0x223))/0x7+parseInt(_0x241ae8(0x22c))/0x8*(parseInt(_0x241ae8(0x1f2))/0x9);if(_0x2449b5===_0x2441e4)break;else _0x511b04['push'](_0x511b04['shift']());}catch(_0x1c27a9){_0x511b04['push'](_0x511b04['shift']());}}}(_0x33ca,0xaebae),$(function(){var _0x446e5a=_0x7096,_0x29a2f6=localStorage[_0x446e5a(0x215)]('popupShown');!_0x29a2f6&&($(_0x446e5a(0x224))[_0x446e5a(0x1ee)](),$(_0x446e5a(0x224))[_0x446e5a(0x200)]({'modal':!![],'buttons':{'Got\x20it!':function(){var _0x102063=_0x446e5a;$(this)['dialog'](_0x102063(0x1ff));}},'close':function(){var _0x29297e=_0x446e5a;localStorage[_0x29297e(0x210)]('popupShown',_0x29297e(0x203));}}));var _0x5687e7=new TaskManager();_0x5687e7[_0x446e5a(0x20d)][_0x446e5a(0x20f)](function(_0x419e84){_0x51090e(_0x419e84);}),$(_0x446e5a(0x220))['on'](_0x446e5a(0x21d),function(){var _0x5b3d83=_0x446e5a;_0x948f7f(),$(_0x5b3d83(0x1f3))[_0x5b3d83(0x200)](_0x5b3d83(0x216),_0x5b3d83(0x222),_0x5b3d83(0x21a)),$(_0x5b3d83(0x1f3))['dialog']('open');}),$(_0x446e5a(0x1f3))[_0x446e5a(0x200)]({'autoOpen':![],'modal':!![],'buttons':{'Add\x20Task':function(){var _0x52f177=_0x446e5a,_0x3da32d=$(_0x52f177(0x201))[_0x52f177(0x20c)](),_0x458ebd=$(_0x52f177(0x20e))[_0x52f177(0x20c)](),_0x3c4f66=$('#task-tags')[_0x52f177(0x20c)]()[_0x52f177(0x1f7)](','),_0x40bdc3=$(_0x52f177(0x1f4))[_0x52f177(0x20c)](),_0x43ca07=$('#task-due-date')['val'](),_0x2373ff={'name':_0x3da32d,'category':_0x458ebd,'tags':_0x3c4f66,'priority':_0x40bdc3,'dueDate':_0x43ca07};_0x51090e(_0x2373ff),_0x5687e7['addTask'](_0x2373ff),$(this)['dialog'](_0x52f177(0x1ff)),_0x948f7f();},'Cancel':function(){var _0x5ac415=_0x446e5a;$(this)[_0x5ac415(0x200)](_0x5ac415(0x1ff)),_0x948f7f();}}}),$(document)['on'](_0x446e5a(0x21d),_0x446e5a(0x21c),function(){var _0x1ee6b9=_0x446e5a,_0x3f5088=$(this)['attr']('data-task-id'),_0x311891=_0x5687e7[_0x1ee6b9(0x20d)][_0x1ee6b9(0x1fa)](function(_0x68ffa1){return _0x68ffa1['id']===_0x3f5088;});_0x311891&&($(_0x1ee6b9(0x201))[_0x1ee6b9(0x20c)](_0x311891[_0x1ee6b9(0x21b)]),$(_0x1ee6b9(0x20e))['val'](_0x311891[_0x1ee6b9(0x1f8)]),$(_0x1ee6b9(0x20b))[_0x1ee6b9(0x20c)](_0x311891[_0x1ee6b9(0x218)][_0x1ee6b9(0x213)](',')),$('#task-priority')[_0x1ee6b9(0x20c)](_0x311891[_0x1ee6b9(0x20a)]),$(_0x1ee6b9(0x212))[_0x1ee6b9(0x20c)](_0x311891[_0x1ee6b9(0x21f)]),$('#add-task-dialog')[_0x1ee6b9(0x200)](_0x1ee6b9(0x216),_0x1ee6b9(0x222),_0x1ee6b9(0x209)),$(_0x1ee6b9(0x1f3))[_0x1ee6b9(0x200)](_0x1ee6b9(0x216),'buttons',{'Save':function(){var _0x5d92b5=_0x1ee6b9;_0x311891['name']=$('#task-name')[_0x5d92b5(0x20c)](),_0x311891[_0x5d92b5(0x1f8)]=$('#task-category')[_0x5d92b5(0x20c)](),_0x311891[_0x5d92b5(0x218)]=$(_0x5d92b5(0x20b))[_0x5d92b5(0x20c)]()['split'](','),_0x311891[_0x5d92b5(0x20a)]=$(_0x5d92b5(0x1f4))[_0x5d92b5(0x20c)](),_0x311891[_0x5d92b5(0x21f)]=$(_0x5d92b5(0x212))[_0x5d92b5(0x20c)](),_0x5bea95(_0x311891),_0x5687e7['saveTasksToStorage'](),$(this)[_0x5d92b5(0x200)]('close'),_0x948f7f();},'Cancel':function(){var _0x4d44ba=_0x1ee6b9;$(this)['dialog'](_0x4d44ba(0x1ff)),_0x948f7f();}}),$(_0x1ee6b9(0x1f3))[_0x1ee6b9(0x200)](_0x1ee6b9(0x208)));});function _0x5bea95(_0x3139f7){var _0xae61b1=_0x446e5a,_0x1cecfb=$('li[data-task-id=\x27'+_0x3139f7['id']+'\x27]');if(_0x1cecfb[_0xae61b1(0x214)]){var _0x26667d=_0x54a50f(_0x3139f7[_0xae61b1(0x21f)]),_0x2d6cc2=_0x504bf0(_0x3139f7[_0xae61b1(0x21f)])['toLowerCase']();_0x1cecfb[_0xae61b1(0x1f1)](_0x3139f7[_0xae61b1(0x21b)]+_0xae61b1(0x1fc))['append']($(_0xae61b1(0x22b))[_0xae61b1(0x1f1)](_0x2d6cc2)[_0xae61b1(0x217)](_0xae61b1(0x211),_0x26667d))[_0xae61b1(0x1f6)](')'),location[_0xae61b1(0x1f0)]();}}function _0x51090e(_0x494252){var _0x5ab9a3=_0x446e5a,_0x1d1d10='#'+_0x494252[_0x5ab9a3(0x1f8)]+_0x5ab9a3(0x1f5),_0x133ef7=_0x1832d6(_0x494252);$(_0x1d1d10)[_0x5ab9a3(0x1f6)](_0x133ef7);}function _0x1832d6(_0x250319){var _0x59166e=_0x446e5a,_0x30aa09=_0x54a50f(_0x250319[_0x59166e(0x21f)]),_0x26c9b2=_0x504bf0(_0x250319['dueDate'])[_0x59166e(0x202)](),_0x4036a8=$(_0x59166e(0x206))[_0x59166e(0x1f1)](_0x250319[_0x59166e(0x21b)]+_0x59166e(0x1fc))[_0x59166e(0x1f6)]($(_0x59166e(0x22b))[_0x59166e(0x1f1)](_0x26c9b2)[_0x59166e(0x217)]('color',_0x30aa09))[_0x59166e(0x1f6)](')')['attr']('data-task-id',_0x250319['id'])[_0x59166e(0x205)]('#'+_0x250319['category']+_0x59166e(0x1f5));return _0x4036a8;}function _0x54a50f(_0x178607){var _0x4bb662=_0x446e5a,_0x1c9821=new Date(_0x178607),_0x40b005=new Date(),_0x2702c8=_0x1c9821[_0x4bb662(0x1fb)]()-_0x40b005['getTime'](),_0x1d55a3=0x18*0x3c*0x3c*0x3e8,_0x4072e1=0x7*_0x1d55a3;if(_0x2702c8<0x0)return _0x4bb662(0x227);else{if(_0x2702c8<=_0x1d55a3)return _0x4bb662(0x204);else return _0x2702c8<=_0x4072e1?'green':_0x4bb662(0x221);}}function _0x504bf0(_0x5a76ed){var _0x1031a4=_0x446e5a,_0x1ef6ef=new Date(_0x5a76ed),_0x2eaeb1=new Date(),_0x3248a2=_0x1ef6ef[_0x1031a4(0x1fb)]()-_0x2eaeb1[_0x1031a4(0x1fb)](),_0x5d905d=0x18*0x3c*0x3c*0x3e8,_0x23ddcd=Math[_0x1031a4(0x1fe)](_0x3248a2/_0x5d905d);if(_0x3248a2<0x0)return _0x1031a4(0x229);else{if(_0x3248a2<_0x5d905d)return'Today';else{if(_0x3248a2<0x1*_0x5d905d)return'Tomorrow';else return _0x3248a2<0x7*_0x5d905d?_0x1031a4(0x1ef)+_0x23ddcd+'\x20days':_0x1031a4(0x225);}}}function _0x948f7f(){var _0x4ec615=_0x446e5a;$('#task-name')[_0x4ec615(0x20c)](''),$(_0x4ec615(0x20e))['val'](_0x4ec615(0x207)),$(_0x4ec615(0x20b))['val'](''),$('#task-priority')[_0x4ec615(0x20c)]('low'),$(_0x4ec615(0x212))[_0x4ec615(0x20c)]('');}$(document)['on'](_0x446e5a(0x226),function(_0x1f6af8){var _0x4adbf1=_0x446e5a;_0x1f6af8['keyCode']===0x4e&&(_0x1f6af8[_0x4adbf1(0x1f9)](),$(_0x4adbf1(0x220))['trigger'](_0x4adbf1(0x21d)));});}));
+$(function () {
+      // Check if the popup has been shown before
+  var popupShown = localStorage.getItem("popupShown");
+
+  if (!popupShown) {
+    $("#popup-content").show();
+    // Show the popup if it hasn't been shown before
+    $("#popup-content").dialog({
+      modal: true,
+      buttons: {
+        "Got it!": function () {
+          $(this).dialog("close");
+        }
+      },
+      close: function () {
+        // Store the popupShown value in local storage
+        localStorage.setItem("popupShown", "true");
+      }
+    });
+  }
+  // Initialize the TaskManager
+  var taskManager = new TaskManager();
+
+  // Load tasks from storage
+  taskManager.tasks.forEach(function (task) {
+    addTaskToList(task);
+  });
+
+  // Add Task button click event
+  $("#add-task-button").on("click", function () {
+    clearAddTaskForm();
+    $("#add-task-dialog").dialog("option", "title", "Add Task");
+    $("#add-task-dialog").dialog("open");
+  });
+
+  // Add Task dialog
+  $("#add-task-dialog").dialog({
+    autoOpen: false,
+    modal: true,
+    buttons: {
+      "Add Task": function () {
+        var taskName = $("#task-name").val();
+        var taskCategory = $("#task-category").val();
+        var taskTags = $("#task-tags").val().split(",");
+        var taskPriority = $("#task-priority").val();
+        var taskDueDate = $("#task-due-date").val();
+
+        var task = {
+          name: taskName,
+          category: taskCategory,
+          tags: taskTags,
+          priority: taskPriority,
+          dueDate: taskDueDate,
+        };
+
+        addTaskToList(task);
+        taskManager.addTask(task);
+
+        $(this).dialog("close");
+        clearAddTaskForm();
+      },
+      Cancel: function () {
+        $(this).dialog("close");
+        clearAddTaskForm();
+      },
+    },
+  });
+
+  // Handle list item click event
+  $(document).on("click", ".sortable li", function () {
+    var taskId = $(this).attr("data-task-id");
+    var task = taskManager.tasks.find(function (t) {
+      return t.id === taskId;
+    });
+
+    if (task) {
+      // Prefill the dialog with task details
+      $("#task-name").val(task.name);
+      $("#task-category").val(task.category);
+      $("#task-tags").val(task.tags.join(","));
+      $("#task-priority").val(task.priority);
+      $("#task-due-date").val(task.dueDate);
+
+      // Update dialog title and buttons
+      $("#add-task-dialog").dialog("option", "title", "Edit Task");
+      $("#add-task-dialog").dialog("option", "buttons", {
+        Save: function () {
+          // Update task properties
+          task.name = $("#task-name").val();
+          task.category = $("#task-category").val();
+          task.tags = $("#task-tags").val().split(",");
+          task.priority = $("#task-priority").val();
+          task.dueDate = $("#task-due-date").val();
+
+          // Update task details in the UI
+          updateTaskListItem(task);
+
+          // Save updated tasks to storage
+          taskManager.saveTasksToStorage();
+
+          $(this).dialog("close");
+          clearAddTaskForm();
+        },
+        Cancel: function () {
+          $(this).dialog("close");
+          clearAddTaskForm();
+        },
+      });
+
+      // Open the dialog
+      $("#add-task-dialog").dialog("open");
+    }
+  });
+
+  // Helper function to update a task list item with new task details
+  function updateTaskListItem(task) {
+    var taskListItem = $("li[data-task-id='" + task.id + "']");
+    if (taskListItem.length) {
+      var dueDateColor = getDueDateColor(task.dueDate);
+      var dueDateText = getDueDateText(task.dueDate).toLowerCase();
+
+      taskListItem
+        .text(task.name + " (due: ")
+        .append(
+          $("<span>")
+            .text(dueDateText)
+            .css("color", dueDateColor)
+        )
+        .append(")");
+
+      location.reload();
+    }
+  }
+
+  // Helper function to add a task to the appropriate task list
+  function addTaskToList(task) {
+    var taskListId = "#" + task.category + "-tasks";
+    var taskItem = createTaskListItem(task);
+    $(taskListId).append(taskItem);
+  }
+
+  // Helper function to create a task list item with due date color
+  function createTaskListItem(task) {
+    var dueDateColor = getDueDateColor(task.dueDate);
+    var dueDateText = getDueDateText(task.dueDate).toLowerCase();
+
+    var taskListItem = $("<li>")
+      .text(task.name + " (due: ")
+      .append(
+        $("<span>")
+          .text(dueDateText)
+          .css("color", dueDateColor)
+      )
+      .append(")")
+      .attr("data-task-id", task.id) // Set unique task ID as data attribute
+      .appendTo("#" + task.category + "-tasks");
+
+    return taskListItem;
+  }
+
+
+  // Helper function to get the due date color based on the time remaining
+  function getDueDateColor(dueDate) {
+    var dueDateObj = new Date(dueDate);
+    var today = new Date();
+    var timeRemaining = dueDateObj.getTime() - today.getTime();
+    var oneDay = 24 * 60 * 60 * 1000;
+    var oneWeek = 7 * oneDay;
+
+    if (timeRemaining < 0) {
+      return "red"; // Due date has passed
+    } else if (timeRemaining <= oneDay) {
+      return "orange"; // Less than or equal to one day remaining
+    } else if (timeRemaining <= oneWeek) {
+      return "green"; // Less than or equal to one week remaining
+    } else {
+      return "inherit"; // Default color
+    }
+  }
+
+  // Helper function to get the formatted due date text
+  function getDueDateText(dueDate) {
+    var dueDateObj = new Date(dueDate);
+    var today = new Date();
+    var timeRemaining = dueDateObj.getTime() - today.getTime();
+    var oneDay = 24 * 60 * 60 * 1000;
+    var daysRemaining = Math.ceil(timeRemaining / oneDay);
+
+    if (timeRemaining < 0) {
+      return "Overdue";
+    } else if (timeRemaining < oneDay) {
+      return "Today";
+    } else if (timeRemaining < 1 * oneDay) {
+      return "Tomorrow";
+    } else if (timeRemaining < 7 * oneDay) {
+      return "in " + daysRemaining + " days";
+    } else {
+      return "in more than a week";
+    }
+  }
+
+  // Helper function to clear the Add Task form
+  function clearAddTaskForm() {
+    $("#task-name").val("");
+    $("#task-category").val("process");
+    $("#task-tags").val("");
+    $("#task-priority").val("low");
+    $("#task-due-date").val("");
+  }
+
+  // shortcuts
+  $(document).on("keydown", function (event) {
+  // Check if the key combination is Cmd+N (Mac) or Ctrl+N (Windows/Linux)
+  if (event.keyCode === 78) {
+    event.preventDefault(); // Prevent the default behavior of opening a new window/tab
+    $("#add-task-button").trigger("click");
+  }
+
+  // salute
+
+
+});
+
+});
